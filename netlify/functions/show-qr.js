@@ -3,7 +3,7 @@ const QRCode        = require('qrcode');
 const rootURL       = "https://ueolinks.org";
 const pageTemplate  = require('../../includes/page.js');
 
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 
 
 const handler = async event => {
