@@ -3,9 +3,6 @@ const QRCode        = require('qrcode');
 const rootURL       = "https://ueolinks.org";
 const pageTemplate  = require('../../includes/page.js');
 
-// import fetch from "node-fetch";
-
-
 const handler = async event => {
 
   // Get the original short URL (without the qr part of the path)
@@ -15,18 +12,17 @@ const handler = async event => {
   // follow the redirect to get the destination to display
   const destinationURL = await fetch(shortURL);
 
-  // make a QR cade and then return a page displaying it
-  return QRCode.toString(shortURL, {'type':'svg'} )
-  .then(svg => {
-  
+  return QRCode.toDataURL(shortURL, { width: 1000 } )
+  .then(data => {
     // render the data into the template
     console.log(`ODB render of ${shortURL}`);
+    console.log(`data ${data}`);
     return {
       statusCode: 200,
       body: pageTemplate({
         shortURL : shortURL,
         destinationURL : destinationURL.url,
-        svg: escape(svg)
+        data: data
       })
     };
   })

@@ -31,7 +31,7 @@ module.exports = (data) => {
       img {
         display:block;
         width: 60vh;
-        max-width: 80%;
+        max-width: 40%;
         margin: 3em auto;
         border-radius: 10px;
         padding: 10px;
@@ -63,7 +63,7 @@ module.exports = (data) => {
       <h1><a href="${ data.shortURL }">${ data.shortURL.split("://")[1] }</a></h1>
       </header>    
       <main>
-      <img src='data:image/svg+xml;utf8,${ data.svg }'>
+      <img src='${ data.data }' title="${ data.shortURL }">
       <p>
         <a class="dest" href="${ data.destinationURL }" title="${ data.destinationURL }">${ data.destinationURL }</a>
       </p>
