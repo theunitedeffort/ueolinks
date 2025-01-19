@@ -51,29 +51,23 @@ module.exports = (data) => {
       }
       .dest {
         color:#666;
-        width: 60%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
+        max-width: 90%;
+        margin: 0 auto;
+        overflow-wrap: break-word;
       }
     </style
   </head>
   <body>
     <header>
       <h1><a href="${ data.shortURL }">${ data.shortURL.split("://")[1] }</a></h1>
-      <a class="dest" href="${ data.destinationURL }">${ data.destinationURL }</a>
-    </header>    
-    <main>
+      </header>    
+      <main>
       <img src='data:image/svg+xml;utf8,${ data.svg }'>
+      <p>
+        <a class="dest" href="${ data.destinationURL }" title="${ data.destinationURL }">${ data.destinationURL }</a>
+      </p>
     </main>
-    <footer>
-      <p>
-        <a href="https://findthat.at">findthat.at</a> is a URL shortener made with <a href="https://docs.netlify.com/routing/redirects/?utm_campaign=devex-ph&utm_source=findthat.at&utm_medium=blog&utm_content=redirect-mission">Netlify Redirects</a> by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a>.  
-      </p>
-      <p>
-        Read how to <a href="https://findthat.at">make your own</a>.
-      </p>
-    </footer>
   </body>
   </html>`;
 
