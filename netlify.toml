@@ -1,10 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = "./dist"
+  command = "echo 'No build for this site'"
 
 [dev]
   command = ""
-  publish = "./dist"
 
 # Catch-all for any unfound short codes
 [[redirects]]
