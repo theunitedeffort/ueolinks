@@ -1,4 +1,4 @@
-module.exports = (data) => {
+export default (data) => {
 
   return `<!DOCTYPE html>
   <html lang="en">

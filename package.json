@@ -10,14 +10,10 @@
     "shorten": "cli.js"
   },
   "scripts": {
-    "shorten": "netlify-shortener",
-    "build": "cp ./_redirects ./dist/_redirects",
-    "start": "npm run build && BROWSER=none ntl dev --live=test"
+    "build": "echo 'No build for this site'"
   },
   "dependencies": {
-    "@netlify/functions": "^1.6.0",
-    "netlify-shortener": "^1.0.3",
-    "node-fetch": "^3.1.1",
+    "@netlify/edge-functions": "^2.11.1",
     "qrcode": "^1.4.4"
   }
 }
