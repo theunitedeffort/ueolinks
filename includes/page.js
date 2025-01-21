@@ -32,22 +32,19 @@ export default (data) => {
         display:block;
         width: 60vh;
         max-width: 40%;
-        margin: 3em auto;
+        margin: 2em auto 3em;
         border-radius: 10px;
         padding: 10px;
         background-color: #fff;
       }
       h1 {
-        font-size: 3em;
+        font-size: 2em;
         padding-top: 1em;
       }
       a:link,
       a:visited {
         color: #333;
         text-decoration-color:#999999;
-      }
-      main {
-        
       }
       .dest {
         color:#666;
