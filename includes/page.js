@@ -7,6 +7,11 @@ export default (data) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${ data.shortURL.split("://")[1] }</title>
+    <meta property="og:image" content="${ data.data }"/>
+    <meta property="og:url" content="https://ueolinks.org/" />
+    <meta property="og:title" content="The United Effort Organization" />
+    <meta property="og:description" content="${ data.shortURL }" />
+  
     <style>
       
       * {
@@ -53,7 +58,7 @@ export default (data) => {
         margin: 0 auto;
         overflow-wrap: break-word;
       }
-    </style
+    </style>
   </head>
   <body>
     <header>
