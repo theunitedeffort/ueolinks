@@ -4,7 +4,6 @@ import QRCode from "qrcode";
 import { log } from "console";
 
 const dataURL = "https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/gviz/tq?tqx=out:json"
-
 const rootURL = "https://ueolinks.org";
 
 export default async function handler(req: Request, context: Context) {
@@ -26,7 +25,16 @@ if(!path) return;
   
   // create a map of routes for easy lookups
   const routes = new Map()
-  routesJSON.table.rows.map((route) => { routes.set(route.c[0].v, route.c[1].v)} );
+  routesJSON.table.rows.map((route) => { 
+    // only add routes that have both a short and long URL
+    // and trim any whitespace that might have been added by mistake
+    if(route.c[0] && route.c[1]) {
+      return routes.set(
+        route.c[0].v.trim(),
+        route.c[1].v.trim()
+      )
+    }
+  });
 
   if (!path.endsWith("/qr")) {
     // if the request is for a short link, redirect to the destination
@@ -54,6 +62,8 @@ if(!path) return;
 
 export const config: Config = {
   path: "/*",
+  onError: "bypass",
+  excludedPath: ["/favicon.ico", "/robots.txt"]
 };
 
 
