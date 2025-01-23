@@ -1,9 +1,10 @@
 import type { Config, Context } from "@netlify/edge-functions";
 import pageTemplate from "../../includes/page.js";
 import QRCode from "qrcode";
-import { log } from "console";
 
-const dataURL = "https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/gviz/tq?tqx=out:json"
+const sheetURL = `https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/edit`
+const dataURL = `${sheetURL.split("/edit")[0]}/gviz/tq?tqx=out:json`;
+
 const rootURL = "https://ueolinks.org";
 
 export default async function handler(req: Request, context: Context) {
