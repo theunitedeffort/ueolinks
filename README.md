@@ -6,7 +6,7 @@ Deployed to Netlify at https://ueolinks.org
 
 ## Usage
 
-Links are created an managed in this Google Sheet: [UEO Links](https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/edit?gid=0#gid=0).
+Links are created an managed in this Google Sheet: [UEO Links](https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/edit?gid=0#gid=0). (Available via this short link, for convenience: `https://ueolinks.org/links`)
 
 To create a new short link, add a new row to the sheet providing a destination (where the short link will redirect to) and a path (which will appear in the short URL like so: `https://ueolinks.org/{PATH}`).
 
