@@ -6,9 +6,10 @@ Deployed to Netlify at https://ueolinks.org
 
 ## Usage
 
-Links are created an managed in this Google Sheet: [UEO Links](https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/edit?gid=0#gid=0). (Available via this short link, for convenience: `https://ueolinks.org/links`)
+Links are created an managed in this Google Sheet: [UEO Links](https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/edit?gid=0#gid=0).
+(Also available via this short link, for convenience: https://ueolinks.org/links)
 
-To create a new short link, add a new row to the sheet providing a destination (where the short link will redirect to) and a path (which will appear in the short URL like so: `https://ueolinks.org/{PATH}`).
+To create a new short link, add a new row to the sheet providing a destination (where the short link will redirect to) and a path which will appear in the short URL like so: `https://ueolinks.org/{PATH}`.
 
 Requests made to `https://ueolinks.org/{PATH}` will determine the destination URL on-demand, and redirect the user to the destination URL, so updates to this sheet will be reflected in the short links available immediately.
 
@@ -18,7 +19,7 @@ Any requests to `https://ueolinks.org/{PATH}` which do not have a corresponding 
 
 For convenience, you can generate a QR code for any of the short links in by appedning `/qr` to any of the available short links, like so: `https://ueolinks.org/{PATH}/qr`.
 
-This will return a page containing an image of a QR code for the short link, and a description of the destination URL. 
+This will return a page containing an image of a QR code for the short link, and a description of the destination UR, like this: https://ueolinks.org/links/qr
 
 The generated QR code image resolves to the short link rather than the destination URL, so can continute to be used if the desired destination URL is updated.
 
