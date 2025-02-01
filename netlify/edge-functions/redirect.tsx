@@ -29,30 +29,37 @@ if(!path) return;
   routesJSON.table.rows.map((route) => { 
     // only add routes that have both a short and long URL
     // and trim any whitespace that might have been added by mistake
+    // We'll also make the path lowercae and make the lookup case-insensitive
     if(route.c[0] && route.c[1]) {
       return routes.set(
-        route.c[0].v.trim(),
+        route.c[0].v.trim().toLowerCase(),
         route.c[1].v.trim()
       )
     }
   });
+
+  console.log(`The sheet has ${routes.size} URLs`);
 
   if (!path.endsWith("/qr")) {
     // if the request is for a short link, redirect to the destination
     if (path.endsWith("/")) {
       path = path.slice(0, -1);
     }
-    const destinationURL = routes.get(path);
+    const destinationURL = routes.get(path.toLowerCase());
+    console.log(`${path} is the path for ${destinationURL}`);
+
     if(!destinationURL) return;
     return Response.redirect(destinationURL, 302);
   } 
   else {
-    // if the request is for a QR code, return the QR code
+    // if the request is for a QR code, return the QR code page
     path = path.replace("/qr", "");  
+    console.log(`${path} is the path for ${routes.get(path.toLowerCase())}`);
+
     const page = pageTemplate({
       shortURL: `${rootURL}/${path}`,
-      destinationURL: routes.get(path),
-      data: await QRCode.toDataURL(`${rootURL}/${path}`, { width: 1000 } )
+      destinationURL: routes.get(path.toLowerCase()),
+      data: await QRCode.toDataURL(`${rootURL}/${path.toLowerCase()}`, { width: 1000 } )
     })
     return new Response(page, {
       status: 200,
