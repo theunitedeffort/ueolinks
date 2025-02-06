@@ -5,7 +5,7 @@ import QRCode from "qrcode";
 const sheetURL = `https://docs.google.com/spreadsheets/d/14x_OV2siy3bny7SsjwjCLFf6HtohPgg9A86mf7XNJ4Y/edit`
 const dataURL = `${sheetURL.split("/edit")[0]}/gviz/tq?tqx=out:json`;
 
-const rootURL = "https://ueolinks.org";
+const rootURL = "https://ueo.link";
 
 export default async function handler(req: Request, context: Context) {
 
